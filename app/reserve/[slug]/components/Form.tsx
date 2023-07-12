@@ -1,8 +1,10 @@
-"use client";
+'use client';
 
-import { CircularProgress } from "@mui/material";
-import { useEffect, useState } from "react";
-import useReservation from "../../../../hooks/useReservation";
+import { CircularProgress } from '@mui/material';
+import { useEffect, useState } from 'react';
+import useReservation from '../../../../hooks/useReservation';
+import Success from './Success';
+import ErrorPage from './ErrorPage';
 
 export default function Form({
   slug,
@@ -14,14 +16,14 @@ export default function Form({
   partySize: string;
 }) {
   const [inputs, setInputs] = useState({
-    bookerFirstName: "",
-    bookerLastName: "",
-    bookerPhone: "",
-    bookerEmail: "",
-    bookerOccasion: "",
-    bookerRequest: "",
+    bookerFirstName: '',
+    bookerLastName: '',
+    bookerPhone: '',
+    bookerEmail: '',
+    bookerOccasion: '',
+    bookerRequest: '',
   });
-  const [day, time] = date.split("T");
+  const [day, time] = date.split('T');
   const [disabled, setDisabled] = useState(true);
   const [didBook, setDidBook] = useState(false);
   const { error, loading, createReservation } = useReservation();
@@ -64,12 +66,10 @@ export default function Form({
   return (
     <div className="mt-10 flex flex-wrap justify-between w-[660px]">
       {didBook ? (
-        <div>
-          <h1>You are all booked up</h1>
-          <p>Enjoy your reservation</p>
-        </div>
+        <Success />
       ) : (
         <>
+          {error ? <ErrorPage /> : null}
           <input
             type="text"
             className="border rounded p-3 w-80 mb-4"
@@ -126,7 +126,7 @@ export default function Form({
             {loading ? (
               <CircularProgress color="inherit" />
             ) : (
-              "Complete reservation"
+              'Complete reservation'
             )}
           </button>
           <p className="mt-4 text-sm">
