@@ -71,6 +71,7 @@ export default function SearchSideBar({
         <div className="flex">
           {prices.map(({ price, label, className }) => (
             <Link
+              key={label}
               href={{
                 pathname: "/search",
                 query: {

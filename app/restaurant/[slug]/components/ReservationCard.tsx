@@ -77,7 +77,8 @@ export default function ReservationCard({
           onChange={(e) => setPartySize(e.target.value)}
         >
           {partySizes.map((size) => (
-            <option value={size.value}>{size.label}</option>
+            <option key={size.label}
+            value={size.value}>{size.label}</option>
           ))}
         </select>
       </div>
@@ -102,7 +103,7 @@ export default function ReservationCard({
             onChange={(e) => setTime(e.target.value)}
           >
             {filterTimeByRestaurantOpenWindow().map((time) => (
-              <option value={time.time}>{time.displayTime}</option>
+              <option key={time.time} value={time.time}>{time.displayTime}</option>
             ))}
           </select>
         </div>
