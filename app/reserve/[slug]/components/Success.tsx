@@ -8,14 +8,13 @@ export default function Success() {
 
   const router = useRouter();
 
-  const redirect = () => {
-    const timeout = setTimeout(() => {
-      router.push('/');
-    }, 3000);
-    return () => clearTimeout(timeout);
-  };
-
   useEffect(() => {
+    const redirect = () => {
+      const timeout = setTimeout(() => {
+        router.push('/');
+      }, 3000);
+      return () => clearTimeout(timeout);
+    };
     redirect();
   }, []);
 
