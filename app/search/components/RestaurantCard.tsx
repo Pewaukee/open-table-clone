@@ -3,6 +3,7 @@ import Link from "next/link";
 import { calculateReviewRatingAverage } from "../../../utils/calculateReviewRatingAverage";
 import Price from "../../components/Price";
 import Stars from "../../components/Stars";
+import Image from "next/image";
 
 interface Restaurant {
   id: number;
@@ -31,7 +32,7 @@ export default function RestaurantCard({
 
   return (
     <div className="border-b flex pb-5 ml-4">
-      <img src={restaurant.main_image} alt="" className="w-44 h-36 rounded" />
+      <Image src={restaurant.main_image} alt="" className="w-44 h-36 rounded" />
       <div className="pl-5">
         <h2 className="text-3xl">{restaurant.name}</h2>
         <div className="flex items-start">
