@@ -25,7 +25,7 @@ export default function Header({
         <div className="ml-4">
           <h1 className="text-3xl font-bold">{name}</h1>
           <div className="flex mt-3">
-            <p className="mr-6">{format(new Date(date), "ccc, LLL d")}</p>
+            <p className="mr-6">{format(new Date(day), "ccc, LLL d")}</p>
             <p className="mr-6">{convertToDisplayTime(time as Time)}</p>
             <p className="mr-6">
               {partySize} {parseInt(partySize) === 1 ? "person" : "people"}

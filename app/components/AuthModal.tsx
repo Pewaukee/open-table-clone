@@ -83,7 +83,7 @@ export default function AuthModal({ isSignin }: { isSignin: boolean }) {
       <button
         className={`${renderContent(
           "bg-blue-400 text-white",
-          ""
+          "bg-gray-200 text-black"
         )} border p-1 px-4 rounded mr-3`}
         onClick={handleOpen}
       >
