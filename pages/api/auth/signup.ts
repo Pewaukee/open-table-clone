@@ -42,10 +42,11 @@ export default async function handler(
         valid: validator.isLength(city, { min: 1 }),
         errorMessage: "City is invalid",
       },
-      {
-        valid: validator.isStrongPassword(password),
-        errorMessage: "Password is not strong enough",
-      },
+      // don't worry about strength of password for now
+      // {
+      //   valid: validator.isStrongPassword(password),
+      //   errorMessage: "Password is not strong enough",
+      // },
     ];
 
     validationSchema.forEach((check) => {
