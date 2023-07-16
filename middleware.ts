@@ -29,15 +29,6 @@ export async function middleware(req: NextRequest, res: NextResponse) {
       { status: 401 }
     );
   }
-
-  // set the cors policy to allow requests from our frontend
-  return NextResponse.next({
-    headers: {
-      'Access-Control-Allow-Origin': 'https://open-table-clone-kappa.vercel.app',
-      'Access-Control-Allow-Methods': 'GET, POST',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
 }
 
 export const config = {
