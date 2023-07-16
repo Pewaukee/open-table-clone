@@ -2,6 +2,7 @@ import axios from "axios";
 import { getCookie, deleteCookie } from "cookies-next";
 import { useContext } from "react";
 import { AuthenticationContext } from "../app/context/AuthContext";
+import { baseUrl } from "@/data/url";
 
 const useAuth = () => {
   const { setAuthState } = useContext(AuthenticationContext);
@@ -23,7 +24,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/signin",
+        `${baseUrl}/api/auth/signin`,
         {
           email,
           password,
@@ -68,7 +69,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/signup",
+        `${baseUrl}/api/auth/signup`,
         {
           email,
           password,

@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import axios from "axios";
+import { baseUrl } from "@/data/url";
 
 export default function useReservation() {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ export default function useReservation() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/restaurant/${slug}/reserve`,
+        `${baseUrl}/api/restaurant/${slug}/reserve`,
         {
           bookerFirstName,
           bookerLastName,

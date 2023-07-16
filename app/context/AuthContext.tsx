@@ -1,5 +1,6 @@
 "use client";
 
+import { baseUrl } from "@/data/url";
 import axios from "axios";
 import { getCookie } from "cookies-next";
 import React, { useState, createContext, useEffect } from "react";
@@ -58,7 +59,7 @@ export default function AuthContext({
         });
       }
 
-      const response = await axios.get("http://localhost:3000/api/auth/me", {
+      const response = await axios.get(`${baseUrl}/api/auth/me`, {
         headers: {
           Authorization: `Bearer ${jwt}`,
         },

@@ -1,5 +1,6 @@
 import {useState} from "react"
 import axios from "axios"
+import { baseUrl } from "@/data/url"
 
 export default function useAvailabilities(){
     const [loading, setLoading] = useState(false)
@@ -11,7 +12,7 @@ export default function useAvailabilities(){
         setLoading(true)
 
         try {
-            const response = await axios.get(`http://localhost:3000/api/restaurant/${slug}/availability`, {
+            const response = await axios.get(`${baseUrl}/api/restaurant/${slug}/availability`, {
                 params: {
                     day,
                     time,
