@@ -29,7 +29,16 @@ export default function Stars({
     }
 
     return stars.map((star) => {
-      return <Image key={star.src} src={star} alt="" className="w-4 h-4 mr-1" />;
+      return (
+        <Image
+          key={star.src}
+          src={star}
+          alt=""
+          className="w-4 h-4 mr-1"
+          width={16}
+          height={16}
+        />
+      );
     });
   };
 
