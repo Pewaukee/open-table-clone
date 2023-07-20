@@ -20,12 +20,12 @@ This is a clone of the OpenTable service, which allows users to search and make 
 
 ## Technologies Used
 
-- **Front-end:** React, Next.js, HTML, CSS, JavaScript, Material UI
-- **Back-end:** Node.js, Express.js
-- **Database:** PostgreSQL (with Supabase)
+- **Front-end:** React, [Next.js](https://nextjs.org), HTML, CSS, JavaScript, [Material UI](https://mui.com/material-ui/)
+- **Back-end:** [Node.js](https://nodejs.org), Express.js
+- **Database:** PostgreSQL (with [Supabase](https://supabase.com) as a database provider)
 - **Authentication:** JSON Web Tokens (JWT)
-- **Third-Party APIs/Packages:** Axios, Prisma, cookies-next, jsonwebtoken, validator, Postman API Desktop (for testing)
-- **Deployment:** Vercel
+- **Third-Party APIs/Packages:** [Axios](https://www.npmjs.com/package/axios), [Prisma](https://www.prisma.io), [cookies-next](https://www.npmjs.com/package/cookies-next), [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken), [validator](https://www.npmjs.com/package/validator), [Postman API Desktop](https://www.postman.com/downloads/postman-agent/) (for testing)
+- **Deployment:** [Vercel](https://vercel.com)
 
 ## Getting Started
 
@@ -57,6 +57,17 @@ Contributions are welcome! If you would like to contribute to the OpenTable clon
 
 6. Wait for feedback and iterate on the changes if necessary.
 
+## Deployment
+
+Assuming you have forked this repo, deployment to [vercel](https://vercel.com) requires one extra step: once creating a project on vercel with this repo, you need to add the following environment variables in vercel's settings, like so:
+
+```
+NEXT_PUBLIC_API_URL={VERCEL_URL}
+```
+
+Check out more information on [vercel's documentation](https://vercel.com/docs/environment-variables) about environment variables.
+
+This can correspond to the URL given by vercel not generated on each commit, but the one generated permanently for the project. We need to set this in order to access our built in API routes. The prefix of `NEXT_PUBLIC_` is required for the variable to be accessible in the client. In my example, the URL is the following: `https://open-table-clone-kappa.vercel.app/`. The URL will be different for you, so make sure to use the one generated for your project.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
