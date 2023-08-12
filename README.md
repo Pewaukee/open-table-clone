@@ -2,6 +2,12 @@
 
 This is a clone of the OpenTable service, which allows users to search and make reservations at restaurants.
 
+## Demo
+![Home Page](https://github.com/Pewaukee/open-table-clone/blob/master/demo/home.png)
+![Create Account Modal](https://github.com/Pewaukee/open-table-clone/blob/master/demo/create_account.png)
+![Restaurant Slug Page](https://github.com/Pewaukee/open-table-clone/blob/master/demo/restaurant.png)
+![Error Page For Invalid Data](https://github.com/Pewaukee/open-table-clone/blob/master/demo/error.png)
+The last image will slow up when the Supabase instance tied to this repository is down. Apologies for that.
 ## Features
 
 - **Restaurant Search:** Users can search for restaurants based on various criteria such as location, cuisine, and price range.
