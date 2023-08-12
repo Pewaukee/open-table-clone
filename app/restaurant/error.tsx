@@ -13,7 +13,7 @@ export default function Error({ error }: { error: Error }) {
         width={224}
         height={224}
       />
-      <div className="bg-white px-9 py-14 shadow rounded">
+      <div className="bg-white px-9 py-14 shadow rounded text-black">
         <h3 className="text-3xl font-bold">Well, this is embarrassing</h3>
         <p className="text-reg font-bold">{error.message}</p>
         <p className="mt-6 text-sm font-light">Error Code: 400</p>
